@@ -2,8 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import Input from "./components/input";
 import H3 from "./components/H3";
-import ButtonCopy from "./components/ButtonCopy";
-import ButtonGenerate from "./components/ButtonGenerate";
 import Button from "./components/Button";
 import Form from "./components/Form";
 
