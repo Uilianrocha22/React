@@ -37,7 +37,7 @@ function App() {
       <h1>Gerador de senhas</h1>
 
       <Form>
-        <label htmlFor="passawordSize">Tamanho:</label>
+        <label htmlFor="passawordSize2">Tamanho:</label>
         <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize} />
       </Form>
 
