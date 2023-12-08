@@ -1,0 +1,27 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body {
+  /* background-color: #535bf2; */
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.app {
+  background-color: rgba(15, 31, 70, 0.247);
+  border-radius: 1rem;
+  box-shadow: 6px 6px 10px -4px rgba(0, 0, 0, 0.204);
+  padding: 1rem 2rem;
+  height: 320px;
+}
+
+.caixaButton {
+  margin-left: -2rem;
+}

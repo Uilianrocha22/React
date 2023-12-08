@@ -1,0 +1,13 @@
+.wrapper {
+  margin: 1rem;
+}
+
+button {
+  font-weight: bold;
+  margin-left: 1rem;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px 5px;
+  background: rgb(89, 154, 215) 10%;
+}

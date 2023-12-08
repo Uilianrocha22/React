@@ -1,0 +1,27 @@
+.app {
+  background-color: #61dafb67;
+  display: grid;
+  height: 600px;
+  width: 900px;
+  place-content: center;
+  text-align: center;
+  display: flex;
+  margin: 70px auto;
+  border-radius: 10px;
+}
+
+.imgPoster {
+  height: 400px;
+  margin: 100px 20px;
+  border: 5px solid black;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.384);
+}
+
+.conteudoPoster {
+  margin-top: 100px;
+
+  h1 {
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.803);
+  }
+}

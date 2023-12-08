@@ -1,0 +1,44 @@
+.container {
+  background-color: #d7e1e7;
+  border-radius: 1rem;
+  display: flex;
+  gap: 3rem;
+  height: 33rem;
+  width: 50rem;
+  padding: 4rem;
+  margin: 5rem auto;
+}
+
+.container img {
+  height: 350px;
+  width: 350px;
+  border: 0.3rem solid black;
+  box-shadow: 0 25px 32px -16px rgba(0, 0, 0, 0.4);
+}
+
+.container h2 {
+  font-size: 1.75rem;
+}
+
+.container p {
+  font-size: 1rem;
+  margin-top: 2rem;
+  line-height: 1.5rem;
+}
+
+.wrapper {
+  margin-top: 2rem;
+  background-color: #121212;
+  color: white;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.304);
+  padding: 0.75em 1.25em;
+  transition: 0.3s;
+}
+
+.wrapper:hover {
+  margin-left: 10px;
+  cursor: pointer;
+}

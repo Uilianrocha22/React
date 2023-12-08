@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primeira Página com React</title>
+
+    <style>
+      #app {
+        /* background-color: #232323; */
+
+        display: grid;
+        font-family: sans-serif;
+        height: 100vh;
+        place-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script>
+      const { createElement } = React;
+
+      const appDiv = document.getElementById("app");
+      const root = ReactDOM.createRoot(appDiv);
+
+      const h1 = createElement("h1", { class: "h1" }, "Ola Mundo!");
+      const p = createElement("p", {}, "Estamos usando o React");
+
+      const main = createElement("main", {}, h1, p);
+
+      root.render(main);
+    </script>
+  </body>
+</html>
