@@ -1,14 +1,17 @@
 import { useState } from "react";
-import "./App.css";
 import Input from "./components/input";
 import H3 from "./components/H3";
 import Button from "./components/Button";
 import Form from "./components/Form";
+import "./App.css";
 
 function App() {
   const [password, setPassword] = useState("");
   const [copy, setCopy] = useState("Copiar");
-  const [passwordSize, setPasswordSize] = useState(10);
+  const [customSize, setCustomSize] = useState(8);
+  const [showInput, setShowInput] = useState(false);
+
+  const passwordSize = showInput ? customSize : 8;
 
   function generatePassword() {
     const characters =
@@ -33,11 +36,22 @@ function App() {
   return (
     <div className="app">
       <h1>Gerador de senhas</h1>
+      <div>
+        <label htmlFor="showInput">Customizar tamanho:</label>
+        <input
+          type="checkbox"
+          id="showInput"
+          value={showInput}
+          onChange={() => setShowInput((currentState) => !currentState)}
+        />
+      </div>
 
-      <Form>
-        <label htmlFor="passawordSize2">Tamanho:</label>
-        <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize} />
-      </Form>
+      {showInput && (
+        <Form>
+          <label htmlFor="passawordSize2">Tamanho:</label>
+          <Input passwordSize={customSize} setPasswordSize={setCustomSize} />
+        </Form>
+      )}
 
       <div className="caixaButton">
         <Button
