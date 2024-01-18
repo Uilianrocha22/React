@@ -1,13 +1,23 @@
+import { useRef } from "react";
 import { useState } from "react";
 
 function App() {
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
   const [comments, setComments] = useState([]);
+  const inputRef = useRef(null);
+  const inputRef2 = useRef(null);
 
   function handleSubmit(ev) {
     ev.preventDefault();
 
+    if (author === "") {
+      inputRef.current.focus();
+      return;
+    } else if (content === "") {
+      inputRef2.current.focus();
+      return;
+    }
     const newComment = {
       id: Math.floor(Math.random() * 10000000),
       email: author,
@@ -32,6 +42,7 @@ function App() {
           id="author"
           value={author}
           onChange={(ev) => setAuthor(ev.target.value)}
+          ref={inputRef}
         />
         <label htmlFor="content">Comentário:</label>
 
@@ -39,9 +50,9 @@ function App() {
           id="content"
           cols="30"
           rows="6"
-          required
           value={content}
           onChange={(ev) => setContent(ev.target.value)}
+          ref={inputRef2}
         ></textarea>
         <button type="subit">Enviar comentário</button>
       </form>
