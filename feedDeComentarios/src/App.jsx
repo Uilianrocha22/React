@@ -5,14 +5,15 @@ function App() {
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
   const [comments, setComments] = useState([]);
-  const inputRef = useRef(null);
-  const inputRef2 = useRef(null);
+  const inputRef = useRef("");
+  const inputRef2 = useRef("");
 
   function handleSubmit(ev) {
     ev.preventDefault();
 
     if (author === "") {
       inputRef.current.focus();
+      // inputRef.current.style.backgroundColor = "red";
       return;
     } else if (content === "") {
       inputRef2.current.focus();
