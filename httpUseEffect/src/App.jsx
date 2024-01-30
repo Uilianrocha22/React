@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import "./App.css";
 
+// function que faz a requisição a API dos pokemon
+
 async function fetchPokemon() {
   const data = await fetch("https://pokeapi.co/api/v2/pokemon").then((result) =>
     result.json()
@@ -32,7 +34,7 @@ export default function App() {
   //     console.log(results);
   //     setPokemon(results);
   //   });
-  // }, []);
+  // }, [url]);
 
   async function showDatails(url) {
     const data = await fetch(url).then((result) => result.json());
