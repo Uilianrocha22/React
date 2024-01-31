@@ -34,7 +34,7 @@ export default function App() {
   //     console.log(results);
   //     setPokemon(results);
   //   });
-  // }, [url]);
+  // },[]);
 
   async function showDatails(url) {
     const data = await fetch(url).then((result) => result.json());
