@@ -7,7 +7,7 @@ export default function Product() {
   //     return <h2>Ooops... produto não encontrado.</h2>;
   //   }
 
-  // throw new Error("moio deu erro");
+  //throw new Error("moio deu erro");
 
   return (
     <section>
