@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./pages/RootLayout";
 import Home from "./pages/Home";
-import ListItem from "./pages/items/ListItem";
-import CreateItem from "./pages/items/CreatItem";
-import ShowItem from "./pages/items/ShowItem";
-import UpdateItem from "./pages/items/UpdateItem";
-import ItemsLayout from "./pages/items/ItemsLayout";
+import ListItem from "./pages/itens/ListItem";
+import CreateItem from "./pages/itens/CreatItem";
+import ShowItem from "./pages/itens/ShowItem";
+import UpdateItem from "./pages/itens/UpdateItem";
+import ItemsLayout from "./pages/itens/ItemsLayout";
 
 // localhost:3000/
 // localhost:3000/itens
