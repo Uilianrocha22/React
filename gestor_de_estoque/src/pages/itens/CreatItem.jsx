@@ -1,3 +1,5 @@
+import ItemForm from "../../components/ItemForm";
+
 export default function CreateItens() {
-  return <h2>Novo iten</h2>;
+  return <ItemForm />;
 }
