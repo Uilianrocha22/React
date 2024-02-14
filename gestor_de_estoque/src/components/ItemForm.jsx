@@ -18,7 +18,7 @@ export default function ItemForm({ itemToUpdate }) {
   };
 
   const [item, setItem] = useState(itemToUpdate ? itemToUpdate : defaultItem);
-  const { addItem } = useStock();
+  const { addItem, updatedItem } = useStock();
   const inputRef = useRef(null);
 
   // função para atualizar o estado dinamicamente pegando valor de qualquer input
@@ -35,13 +35,19 @@ export default function ItemForm({ itemToUpdate }) {
     ev.preventDefault();
 
     try {
-      const validItem = new StockItem(item);
-      addItem(validItem);
-      alert("Item cadastrado com sucesso!");
-      setItem(defaultItem);
-      inputRef.current.focus();
+      if (itemToUpdate) {
+        updatedItem(itemToUpdate.id, item);
+        alert("Item atualizado com sucesso!");
+      } else {
+        const validItem = new StockItem(item);
+        addItem(validItem);
+        alert("Item cadastrado com sucesso!");
+        setItem(defaultItem);
+      }
     } catch (err) {
       console.log(err.message);
+    } finally {
+      inputRef.current.focus();
     }
   }
 

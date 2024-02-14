@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import PropTypes from "prop-types";
+import PropTypes, { object } from "prop-types";
 
 export const StockContext = createContext({});
 
@@ -24,7 +24,7 @@ export function StockContextProvider({ children }) {
     // atualizo as datas manualmente do item criado e da atualização
     items.forEach((item) => {
       item.createdAt = new Date(item.createdAt);
-      item.updateAt = new Date(item.updatedAt);
+      item.updatedAt = new Date(item.updatedAt);
     });
 
     // retorno o item
@@ -54,10 +54,28 @@ export function StockContextProvider({ children }) {
     });
   }
 
+  function getItem(itemId) {
+    return items.find((item) => item.id === +itemId);
+  }
+
+  function updatedItem(itemId, newAttributes) {
+    setItems((currentState) => {
+      const itemIndex = currentState.findIndex((item) => item.id === +itemId);
+      const updatedItems = [...currentState];
+      Object.assign(updatedItems[itemIndex], newAttributes, {
+        updatedAt: new Date(),
+      });
+      localStorage.setItem("uilian-react-stock", JSON.stringify(updatedItems));
+      return updatedItems;
+    });
+  }
+
   const stock = {
     items,
     addItem,
     deleteItem,
+    getItem,
+    updatedItem,
   };
 
   return (
